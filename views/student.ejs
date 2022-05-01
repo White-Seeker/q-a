@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        body{
+            margin: 0 auto;
+            background-image: url("studentquestion.png");
+            background-repeat: no-repeat;
+            background-size: 30%;
+            background-position:center ;
+        }
+
+        img{
+          width: 80%;
+        }
+        .navbar{
+            background-color: #F7CCAC !important;
+            text-align: right;
+
+        }
+
+        .navbar-brand
+        {
+          width:7%;
+        }
+
+        .nav-link{
+          color: #3A3845 !important;
+          font-size: 1.2rem;
+        }
+
+        .box{
+          border: 2px solid black;
+          width: 50%;
+          margin: 0 auto;
+          margin-top: 5%;
+          padding: 1%;
+          opacity: 0.8;
+        }
+        #question{
+          width: 100%;
+          height: 100px;
+        }
+        textarea {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            width: 100%;
+        }
+
+        .signout{
+          margin-top: 2%;
+        }
+
+        .signoutbutton{
+          background-color: black !important;
+          border-color: black !important;
+        }
+
+        .askbutton{
+          float: right;
+        }
+
+        .departmentInput{
+          float: center;
+        }
+
+    </style>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="logo.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/student">Ask</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/faq">FAQ</a>
+                  </li>
+                </ul>
+                <ul class="ms-auto">
+                  <form action="/logout" method="post" class="signout">
+                    <button class="btn btn-dark signoutbutton">Sign Out</button>
+                </form>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <form action="/askquestions" method="post">
+          <div class="box">
+            <div>
+                <h5>Your Question</h5>
+                <!-- <input placeholder="Question" name="question" id="question"> -->
+            </div>
+            <textarea rows="12" cols="100%" name="question" placeholder="Type Here..."></textarea>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4">
+                  <label>Ask to</label>
+                  <input placeholder="Professor Name" name="askedto" id="askedto">
+                </div>
+                <div class="col-lg-4">
+                  <div class="departmentInput">
+                    <label>Department</label>
+                    <input placeholder="Enter Department" name="department">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <button class="btn btn-dark askbutton">Ask</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <center>
+          
+        </center>
+
+        <footer class="text-center text-white fixed-bottom" >
+          <!-- Grid container -->
+          <div class="container p-4"></div>
+          <!-- Grid container -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.889)">
+            <p>© 2022 Copyright: OQA03</p>
+          </div>
+          <!-- Copyright -->
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Professor Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <style>
+
+    body{
+            background-image: url("answer.png");
+            background-repeat: no-repeat;
+            background-size: 30%;
+            background-position:center ;
+        }
+
+      img{
+          width: 80%;
+        }
+        .navbar{
+            background-color: #F7CCAC !important;
+            text-align: right;
+
+        }
+
+        .navbar-brand
+        {
+          width:7%;
+        }
+
+        
+        .nav-link{
+          color: #3A3845 !important;
+          font-size: 1.2rem;
+        }
+
+        
+
+        h3{
+          text-align: center;
+          padding-top: 2%;
+        }
+        
+        .navbar{
+            background-color: #F7CCAC !important;
+        }
+
+        .questionSection{
+          border: 2px solid black;
+          width: 70%;
+          margin: 0 auto;
+          padding: 1%;
+          margin-top: 3%;
+          margin-bottom: 2%;
+          opacity: 0.8;
+        }
+
+
+        textarea {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+            width: 95%;
+        }
+
+        .retype{
+          margin-top: 1%;
+          margin-bottom: 2%;
+        }
+
+        .button{
+          margin-top: 1%;
+          margin-bottom: 2%;
+        }
+
+
+        #myInput {
+          
+          width: 70%; /* Full-width */
+          font-size: 16px; /* Increase font-size */
+          padding: 3px 3px 7px 20px; /* Add some padding */
+          border: 1px solid #ddd; /* Add a grey border */
+          margin-bottom: 12px; /* Add some space below the input */
+        }
+
+        #myUL {
+          /* Remove default list styling */
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        #myUL li a {
+          border: 1px solid #ddd; /* Add a border to all links */
+          margin-top: -1px; /* Prevent double borders */
+          background-color: #f6f6f6; /* Grey background color */
+          padding: 12px; /* Add some padding */
+          text-decoration: none; /* Remove default text underline */
+          font-size: 18px; /* Increase the font-size */
+          color: black; /* Add a black text color */
+          display: block; /* Make it into a block element to fill the whole list */
+        }
+
+        #myUL li a:hover:not(.header) {
+          background-color: #eee; /* Add a hover effect to all links, except for headers */
+        }
+
+        .div1{
+          margin-left: 15%;
+          margin-right: -20%;
+        }
+
+        .logout{
+          margin-top: 2%;
+          margin-bottom: 5%;
+          background-color: black !important;
+          border-color: black !important;
+          font-size: larger;
+        }
+        
+        .buttontoast{
+          width: 9%;
+          float: right;
+        }
+
+        .buttontoast:hover{
+          transform: scale(1.1);
+        }
+
+        .idtags{
+          float: right;
+        }
+
+        .submitanswer{
+          float: right;
+        }
+
+        .dangericon{
+          width: 11%;
+        }
+
+        .containerSection{
+          margin-bottom: 10%;
+        }
+
+    </style>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="logo.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/professor">Professor Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/faq">FAQ</a>
+                  </li>
+                </ul>
+                <ul class="ms-auto">
+                  
+                </ul>
+                <ul class="ms-auto">
+                  <ul>  
+                    <form action="/logout" style="float:right;" method="post">
+                      <button class="btn btn-dark logout" >Sign Out</button>
+                    </form>
+                  </ul>
+                  <ul>
+                    <img id="liveToastBtn" class="buttontoast" src="delete.png">
+                  </ul>
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <h3>Unanswered Questions</h3>
+
+        <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-md-4 col-sm-12 div1">
+                      <form action="/professor" method="post">
+                        <input type="text" id="myInput"  name="askedto" class="texts"  placeholder="Search By Professor Name">
+                        <button class="btn btn-dark searchbutton">Search</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-12 div2">
+                      <form action="/professor" method="get">
+                        <button class="btn btn-dark">Clear</button>
+                      </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Toas Message  -->
+              
+
+              <div class="toast-container position-absolute top-50 start-0 translate-middle-y p-3"style="z-index: 11">
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                  <div class="toast-header">
+                    <img src="dangericon.png" class="rounded me-2 dangericon" alt="...">
+                    <strong class="me-auto">Delete A Question?</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                  </div>
+                  <div class="toast-body">
+                    Enter the ID to delete the Question:
+                    <form action="/deletequestion" method="post">
+                      <input placeholder="Enter Question ID" name="questionid">
+                      <button class="btn btn-danger">Click To Delete</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Toast Message -->
+
+
+        <div class="containerSection">
+          <div class="questionSection">
+            <%for(var i=0;i<1;i++){%>
+              <%var count=0%>
+              <%question.forEach(que=>{%>
+                  <%if(que.answer==null){%>
+                      <div class="container">
+                        <form action="/professoranswer" method="post">
+                            <div class="row">
+
+                              <div class="col-lg-8">
+                                <h5>Q. <%= que.question %></h5>
+                              </div>
+                              <div class="col-lg-4">
+                                <div class="idtags">
+                                  <label>Id</label>
+                                  <input value="<%=que.questionid%>" disabled>
+                                </div>
+                              </div>
+                          
+                              <!-- <p>Asked to: <%=que.askedto%></p> -->
+                              <div class="col-lg-6">
+                              <h5>Answer:</h5>
+                              </div>
+                              <div class="col-lg-6">
+
+                            </div>
+                              <textarea placeholder="Type Your Answer here" name="answer" id="answer" cols="100%" rows="4"></textarea>
+                              
+                                <div class="col-lg-6 retype">
+                                  <label>Re-Type the ID</label>
+                                  <input name="questionid" id="questionid">
+                                </div>  
+                                <div class="col-lg-6 button">
+                                  <button class="btn btn-dark submitanswer">Send Answer!</button>
+                                </div>  
+                              <hr>
+                            </div>
+                        </form>
+                      </div>
+                        <%count=400%>
+                  <%}else{%>
+                      <%count=200%>
+                  <%}%>  
+              <%})%>
+              <%if(count==400){%>
+              <%}else if(count==200){%>
+                <center><i><h5>All Questions Have Been Answered</h5></i></center>
+              <%}%>
+            <%}%>
+            </div>
+        </div>
+
+        <footer class="text-center text-white fixed-bottom">
+          <!-- Grid container -->
+          <div class="container p-4"></div>
+          <!-- Grid container -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.889)">
+            <p>© 2022 Copyright: OQA03</p>
+          </div>
+          <!-- Copyright -->
+        </footer>
+
+
+        <script>
+          var toastTrigger = document.getElementById('liveToastBtn')
+var toastLiveExample = document.getElementById('liveToast')
+if (toastTrigger) {
+  toastTrigger.addEventListener('click', function () {
+    var toast = new bootstrap.Toast(toastLiveExample)
+
+    toast.show()
+  })
+}
+        </script>
+
+
+    </body>
+</html>

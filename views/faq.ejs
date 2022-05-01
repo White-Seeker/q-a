@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Q&A</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="../public/icon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <style>
+      body{
+            background-image: url("faq.png");
+            background-repeat: no-repeat;
+            background-size: 30%;
+            background-position:center ;
+        }
+
+      img{
+          width: 80%;
+        }
+        .navbar{
+            background-color: #F7CCAC !important;
+            text-align: right;
+
+        }
+
+        .navbar-brand
+        {
+          width:7%;
+        }
+
+        
+        .nav-link{
+          color: #3A3845 !important;
+          font-size: 1.2rem;
+        }
+        .navbar{
+            background-color: #F7CCAC !important;
+            text-align: right;
+
+        }
+        h3{
+          text-align: center;
+          margin-top: 2%;
+          margin-bottom: 3%;
+        }
+        .questionSection{
+            border: 2px solid black;
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 2%;
+            padding: 1%;
+        }
+
+        #myInput {
+          
+          width: 70%; /* Full-width */
+          font-size: 16px; /* Increase font-size */
+          padding: 3px 3px 7px 20px; /* Add some padding */
+          border: 1px solid #ddd; /* Add a grey border */
+          margin-bottom: 12px; /* Add some space below the input */
+        }
+
+        #myUL {
+          /* Remove default list styling */
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        #myUL li a {
+          border: 1px solid #ddd; /* Add a border to all links */
+          margin-top: -1px; /* Prevent double borders */
+          background-color: #f6f6f6; /* Grey background color */
+          padding: 12px; /* Add some padding */
+          text-decoration: none; /* Remove default text underline */
+          font-size: 18px; /* Increase the font-size */
+          color: black; /* Add a black text color */
+          display: block; /* Make it into a block element to fill the whole list */
+        }
+
+        #myUL li a:hover:not(.header) {
+          background-color: #eee; /* Add a hover effect to all links, except for headers */
+        }
+
+        .logoutbutton{
+          margin-top: 2%;
+          margin-bottom: 5%;
+          background-color: #3A3845 !important;
+          border-color: #3A3845 !important;
+          font-size: larger;
+        }
+
+        .div1{
+          margin-left: 20%;
+          margin-right: -20%;
+        }
+
+        .containerSection{
+          margin-bottom: 10%;
+        }
+
+
+    </style>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="logo.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/faq">FAQ</a>
+                  </li>
+                </ul>
+                <ul class="ms-auto">
+                  <form action="/logout" method="post">
+                    <button class="btn btn-dark logoutbutton">Sign Out</button>
+                  </form>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="containerSection">
+              <h3>Frequently Asked Questions</h3>
+              
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-10 col-md-6 col-sm-6 div1">
+                      <form action="/faq" method="post">
+                        <input type="text" id="myInput"  name="department" class="texts"  placeholder="Search By Department Name">
+                        <button class="btn btn-dark searchbutton">Search</button>
+                      </form>
+                  </div>
+                  <div class="col-lg-2 col-md-6 col-sm-6 div2">
+                      <form action="/faq" method="get">
+                        <button class="btn btn-dark">Clear</button>
+                      </form>
+                  </div>
+                </div>
+              </div>
+                <%question.reverse().forEach(que=>{%>
+                    <div class="questionSection">
+                        <ul id="myUL">
+                          <li><b>Question:</b> <%=que.question%></li>
+                          <li><b>Answer: </b><%=que.answer%></li>
+                          <li><b>Department: </b><%=que.department%></li>
+                        </ul>
+                        <!-- <h5>Question: <%= que.question %></h5>
+                        <p>Asked to: <%=que.question%></p>
+                        <p>
+                            <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                              View Answer
+                            </a>
+                          </p>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <p>Answer: <%=que.answer%></p>
+                            </div>
+                          </div> -->
+                    </div>
+                <%})%>
+              
+          </div>
+
+          <div>
+
+          </div>
+
+
+
+
+          <footer class="text-center text-white fixed-bottom">
+            <!-- Grid container -->
+            <div class="container p-4"></div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.889)">
+              <p>© 2022 Copyright: OQA03</p>
+            </div>
+            <!-- Copyright -->
+          </footer>
+
+
+
+
+
+
+          <script>
+            // function myFunction(question) {
+            // // Declare variables
+            //   var input, filter, ul, li, a, i, txtValue;
+            //   input = document.getElementById('myInput').value;
+            //   filter = input.toUpperCase();
+            //   ul = document.getElementById("myUL");
+            //   li = ul.getElementsByTagName('li');
+
+            //   alert(question.length)
+              // Loop through all list items, and hide those who don't match the search query
+              
+            // }
+
+
+          </script>
+          
+
+    </body>
+</html>

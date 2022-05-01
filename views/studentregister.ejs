@@ -1,0 +1,212 @@
+<html>
+    <head>
+        <title>Student Registration Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="icon.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <style>
+        h1{
+            padding-top: 3%;
+            padding-bottom: 2%;
+        }
+
+        body{
+            background-image: url("register.png");
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position:center ;
+        }
+
+        .box{
+            background-color: #F7CCAC;
+            width: 65%;
+            margin: 0 auto;
+            margin-top: 5%;
+            opacity: 0.8;
+            padding: 1%;
+            margin-bottom: 4%;
+        }
+
+        hr{
+        width:10%;
+        margin: 2% auto;
+      }
+    </style>
+    <body>
+        <div class="box container">
+            <div class="row">
+                <center><h1>Student Registration Form</h1></center>
+                <hr>
+                <form action="/studentregister" method="post">
+                    
+                    <table align="center" cellpadding="10">
+
+                        
+                <!-------- First Name------------------------------------------------------------------------->
+                        <tr>
+                            <div class="col-lg-12 col-md-6 col-sm-12">
+                                <td>First Name</td>
+                            </div>
+                            <div class="col-lg-12 col-md-6 col-sm-12">
+                            <td><input type="text" name="firstname" id="firstname"  placeholder="Enter First Name" maxlength="30" />
+                            (max 30 characters a-z and A-Z)
+                            </td>
+                            </div>
+                        </tr>
+
+                    <!-------- Last Name------------------------------------------------------------------------->
+                        <tr>
+                            <td>Last Name</td>
+                            <td><input type="text"  placeholder="Enter Last Name" name="lastname" id="lastname" maxlength=" 30 " />
+                            (max 30 characters a-z and A-Z)
+                            </td>
+                        </tr>
+
+                    <!-------- Gender------------------------------------------------------------------------->
+                        <tr>
+                            <td>Gender</td>
+                            <td>
+                                Male <input type="radio" name="gender" id="gender" value="Male" />
+                                Female <input type="radio" name="gender" id="gender" value="Female" />
+                            </td>
+                        </tr>
+
+                    <!--------Address------------------------------------------------------------------------->
+                        <td>Address</br></br></br></td>
+                            <td><textarea name="address" id="address" rows="3" cols="25"></textarea></td>
+                        </tr>
+
+                    <!--------Email Id------------------------------------------------------------------------->
+                        <tr style background-color="black">
+                            <td>E-mail ID</td>
+                            <td><input type="text" placeholder="Enter E-mail" name="username" id="username" maxlength="100"   /></td>
+                        </tr>
+
+                        <tr style background-color="black">
+                            <td>Password</td>
+                            <td><input type="password" placeholder="Enter Password" name="password" id="password" maxlength="100"   /></td>
+                        </tr>
+
+                        <tr>
+                            <td>Tag</td>
+                            <td><input disabled type="text"  placeholder="Enter Last Name" name="tag" id="tag" maxlength=" 30 " value="Student"/>
+                            </td>
+                        </tr>
+                    <!-------- Mobile No.------------------------------------------------------------------------->
+                        <tr>
+                            <td>Mobile Number</td>
+                            <td><input type="number"  placeholder="Enter Number" name="mobile" id="mobile" maxlength=" 10 " />
+                            (10 digit number)
+                            </td>
+                        </tr>
+
+                    <!---------------------------------Submit & Reset---------------------------------------------------------------->
+                        <tr>
+                            <td colspan="2" align="center">
+                            <button class="btn btn-dark">Register</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+                    <!--------Date Of Birth------------------------------------------------------------------------->
+                        <!-- <tr>
+                            <td>DATE OF BIRTH</td>
+
+                            <td>
+                                <select name="bday" id="Birthday_Day">
+                                <option value="-1">Day:</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                                </select>
+
+                                <select name="bmonth" id="Birthday_Month">
+                                <option value="-1">Month:</option>
+                                <option value="January">Jan</option>
+                                <option value="February">Feb</option>
+                                <option value="March">Mar</option>
+                                <option value="April">Apr</option>
+                                <option value="May">May</option>
+                                <option value="June">Jun</option>
+                                <option value="July">Jul</option>
+                                <option value="August">Aug</option>
+                                <option value="September">Sep</option>
+                                <option value="October">Oct</option>
+                                <option value="November">Nov</option>
+                                <option value="December">Dec</option>
+                                </select>
+
+                                <select name="byear" id="Birthday_Year">
+                                <option value="-1">Year:</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                                <option value="2009">2009</option>
+                                <option value="2008">2008</option>
+                                <option value="2007">2007</option>
+                                <option value="2006">2006</option>
+                                <option value="2005">2005</option>
+                                <option value="2004">2004</option>
+                                <option value="2003">2003</option>
+                                <option value="2002">2002</option>
+                                <option value="2001">2001</option>
+                                <option value="2000">2000</option>
+                                <option value="1999">1999</option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                                <option value="1993">1993</option>
+                                </select>
+                            </td>
+                        </tr> -->
+
+         
